@@ -5,16 +5,17 @@ var save_world_path = "res://saves/saved_map.json"
 
 var file = File.new()
 
+var max_ID
 var cells
 
 
-var default_data = [{
+var default_data = {"max_ID":0,"cells_list":[{
 	"id": null,
 	"x":null,
 	"y":null,
 	"type":null,
 	"orientation":null
-}]	
+}]}
 
 
 func _ready():
@@ -28,7 +29,8 @@ func _ready():
 		
 	
 	var text = file.get_as_text()
-	cells = parse_json(text)
+	max_ID = parse_json(text).max_ID
+	cells = parse_json(text).cells_list
 	
 	print(cells)
 	file.close()

@@ -7,10 +7,25 @@ var actual_cell_num
 func _ready():
 	create_cell(1,1,0)
 
+
 func create_cell(x, y, type):
 	set_cell(x,y,type)
 	if Global.cells[0].id == null:
-		print("thers nothing here")
+		Global.cells[0].id = Global.max_ID +1
+		Global.cells[0].x = x
+		Global.cells[0].y = y
+		Global.cells[0].type = type
+		Global.cells[0].orientation = "S"
+	else:
+		Global.cells.append({
+			"id": Global.max_ID +1,
+			"x":x,
+			"y":y,
+			"type":type,
+			"orientation":"S"	
+		})
+	Global.max_ID +=1
+		
 	print(Global.cells)
 	print("1st Item is:" + str(Global.cells[0].id))
 	
