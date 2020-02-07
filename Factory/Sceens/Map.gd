@@ -8,13 +8,14 @@ var machines =[]
 func coordinate():
 	for i in Global.cells.size():
 		instance_machine(Global.cells[i])
-		print(i)
+		#print(i)
 	
 
 func instance_machine(cell):
 	var machine1 
-	machine1 = Machine_Controler.machine.new()
-	machines.append(machine)
+	#machine1 = Machine_Controler.machine.new()
+	#machines.append(machine)
+	pass
 
 
 func _process(delta):
