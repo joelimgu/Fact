@@ -404,7 +404,5 @@ margin_bottom = 64.566
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="button_down" from="Machine1_BTN" to="." method="_on_Machine1_BTN_button_down"]
-[connection signal="button_up" from="Machine1_BTN" to="." method="_on_Machine1_BTN_button_up"]
 [connection signal="pressed" from="Machine1_BTN" to="." method="_on_Machine1_BTN_pressed"]
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
