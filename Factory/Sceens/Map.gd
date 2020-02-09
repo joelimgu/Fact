@@ -3,7 +3,7 @@ extends Node2D
 var Machine1_BTN = false
 var hovering_a_BTN = false
 
-var machines =[]
+
 
 func coordinate():
 	for i in Global.cells.size():
@@ -35,5 +35,6 @@ func _on_Machine1_BTN_pressed():
 
 func _on_Button_button_down():
 	print(Global.cells)
+	print(get_tree().get_node_count())
 	
 	

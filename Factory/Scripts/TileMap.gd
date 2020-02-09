@@ -4,8 +4,24 @@ var mouse
 var loc
 var actual_cell_num
 
+var loaded_machine_node = preload("res://Sub_sceens/machine1_scene.tscn")
+var machine_node
+
+var timer
+
 func _ready():
+	machine_node = loaded_machine_node.instance()
+	get_tree().get_root().call_deferred("add_child",machine_node,true)
+	Global.machines.append(machine_node)
+	print("after child added:")
+	print(Global.machines)
 	create_cell(1,1,0)
+	machine_node.position = map_to_world(Vector2(Global.cells[0].x,Global.cells[0].y))
+
+	
+	
+	
+	
 
 #function to create a cell and append it to the dictionary to keep track of it
 func create_cell(x, y, type):
@@ -31,9 +47,7 @@ func create_cell(x, y, type):
 		})
 	#add one to the ID cap to avoid duplicated IDs in one world
 	Global.max_ID +=1
-		
-	print(Global.cells)
-	print("1st Item is:" + str(Global.cells[0].id))
+
 	
 
 #remove cell and remove from the dictionary
@@ -77,7 +91,6 @@ func _input(event):
 		if actual_cell_num != -1:
 			remove_cell(loc.x, loc.y)
 	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

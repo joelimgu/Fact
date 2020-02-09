@@ -1,9 +1,12 @@
 extends Node
 
+var time
 
 var save_world_path = "res://saves/saved_map.json"
 
 var file = File.new()
+
+var machines =[]
 
 var max_ID
 var cells
@@ -40,7 +43,6 @@ func _ready():
 	max_ID = parse_json(text).max_ID
 	cells = parse_json(text).cells_list
 	
-	print(cells)
 	file.close()
 
 
@@ -49,14 +51,5 @@ func load_game():
 	#file.open(save_world_path, file.READ)
 	
 
-
-
-
-class Cell:
-	var loc
-	var type
-	
-	func _init(x, y, t):
-		loc = Vector2(x,y)
-		type = t
-	
+func _process(delta):
+	Timer
