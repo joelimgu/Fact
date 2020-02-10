@@ -96,7 +96,7 @@ func _input(event):
 	var the_machine_is_selected = get_tree().get_root().get_node("Main").Machine1_BTN
 	
 	if L_click_pressed && there_is_no_cell_there && the_machine_is_selected: #add tile selected 
-			create_cell(loc.x, loc.y, 0, "S")
+			create_cell(loc.x, loc.y, 0,"S")
 	elif Input.is_action_pressed("R_click"):
 		if actual_cell_num != -1:
 			remove_cell(loc.x, loc.y)
