@@ -6,8 +6,11 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="RigidBody2D" type="RigidBody2D"]
+scale = Vector2( 4, 4 )
 z_index = 10
+mass = 0.00102041
+gravity_scale = 0.0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]

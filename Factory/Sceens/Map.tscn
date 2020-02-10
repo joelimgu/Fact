@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Assets/Textures/Machine1.png" type="Texture" id=1]
 [ext_resource path="res://Sceens/Map.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Textures/growndTexture.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/TileMap2.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/TileMap.gd" type="Script" id=8]
+[ext_resource path="res://Sub_sceens/Iron.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Sprite"
@@ -347,6 +348,10 @@ extents = Vector2( 23.5457, 57.0666 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 9 )]
+visible = false
+position = Vector2( 64, 64 )
 
 [node name="Machines" type="TileMap" parent="."]
 z_index = 2

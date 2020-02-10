@@ -8,7 +8,7 @@ var file = File.new()
 
 var machines =[]
 
-var max_ID
+var max_assigned_ID
 var cells
 
 var frames_passed_sicnce_started = 0
@@ -21,7 +21,7 @@ var frames_passed_sicnce_started = 0
 #during the program I'll be using andothe array and every dictionary in
 #the array will be an instance of the machine class (conroled in machine 
 #controler.gd)
-var default_data = {"max_ID":0,"cells_list":[{
+var default_data = {"max_assigned_ID":0,"cells_list":[{
 	"id": null,
 	"x":null,
 	"y":null,
@@ -35,23 +35,28 @@ func _ready():
 	
 	if not file.file_exists(save_world_path):
 		file.open(save_world_path, file.WRITE)
-		max_ID = 0
+		max_assigned_ID = 0
 		file.store_string(to_json(default_data))
 		file.close()
 		file.open(save_world_path, file.READ)
 		
 	
 	var text = file.get_as_text()
-	max_ID = parse_json(text).max_ID
+	max_assigned_ID = parse_json(text).max_assigned_ID
 	cells = parse_json(text).cells_list
 	
 	file.close()
 
 
+func assing_id():
+	max_assigned_ID +=1
+	return max_assigned_ID
+
+
 func load_game():
 	pass
 	#file.open(save_world_path, file.READ)
-	
+
 
 func _process(delta):
 	frames_passed_sicnce_started += 1
