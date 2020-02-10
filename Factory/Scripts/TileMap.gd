@@ -13,11 +13,9 @@ func _ready():
 	machine_node = loaded_machine_node.instance()
 	get_tree().get_root().call_deferred("add_child",machine_node,true)
 	Global.machines.append(machine_node)
-	print("after child added:")
-	print(Global.machines)
 	create_cell(1,1,0)
 	machine_node.position = map_to_world(Vector2(Global.cells[0].x,Global.cells[0].y))
-
+	print("1")
 	
 	
 	
