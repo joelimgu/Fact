@@ -10,12 +10,12 @@ var machine_node
 var timer
 
 func _ready():
-	create_cell(1,1,0, "S")
+	create_cell(1,1,0,2)
 	machine_node = loaded_machine_node.instance()
 	get_tree().get_root().call_deferred("add_child",machine_node,true)
 	Global.machines.append(machine_node)
 	machine_node.position = map_to_world(Vector2(Global.cells[0].x,Global.cells[0].y))
-	machine_node.orientation = "X"
+	machine_node.orientation = 2
 	print(machine_node.orientation)
 	
 	
@@ -35,7 +35,7 @@ func create_cell(x, y, type, orientation):
 			"x":x,
 			"y":y,
 			"type":type,
-			"orientation":"S"	
+			"orientation":orientation	
 		}
 	else:
 		Global.cells.append({
@@ -43,7 +43,7 @@ func create_cell(x, y, type, orientation):
 			"x":x,
 			"y":y,
 			"type":type,
-			"orientation":"S"	
+			"orientation":orientation	
 		})
 
 	
@@ -96,7 +96,7 @@ func _input(event):
 	var the_machine_is_selected = get_tree().get_root().get_node("Main").Machine1_BTN
 	
 	if L_click_pressed && there_is_no_cell_there && the_machine_is_selected: #add tile selected 
-			create_cell(loc.x, loc.y, 0,"S")
+			create_cell(loc.x, loc.y, 0,2)
 	elif Input.is_action_pressed("R_click"):
 		if actual_cell_num != -1:
 			remove_cell(loc.x, loc.y)
