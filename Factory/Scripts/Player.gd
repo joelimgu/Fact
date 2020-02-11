@@ -24,6 +24,7 @@ func get_input():
 	velocity = velocity.normalized() * speed
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# warning-ignore:unused_argument
 func _process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)

@@ -9,6 +9,7 @@ var loc
 var cell
 
 
+# warning-ignore:unused_argument
 func a(delta):
 	mouse = get_viewport().get_mouse_position()
 	loc = world_to_map(mouse)

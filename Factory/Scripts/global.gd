@@ -58,5 +58,6 @@ func load_game():
 	#file.open(save_world_path, file.READ)
 
 
+# warning-ignore:unused_argument
 func _process(delta):
 	frames_passed_sicnce_started += 1

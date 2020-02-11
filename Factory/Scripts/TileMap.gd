@@ -11,12 +11,12 @@ var timer
 
 func _ready():
 	create_cell(1,1,0,2)
-	machine_node = loaded_machine_node.instance()
-	get_tree().get_root().call_deferred("add_child",machine_node,true)
-	Global.machines.append(machine_node)
-	machine_node.position = map_to_world(Vector2(Global.cells[0].x,Global.cells[0].y))
-	machine_node.orientation = 2
-	print(machine_node.orientation)
+#	machine_node = loaded_machine_node.instance()
+#	get_tree().get_root().call_deferred("add_child",machine_node,true)
+#	Global.machines.append(machine_node)
+#	machine_node.position = map_to_world(Vector2(Global.cells[0].x,Global.cells[0].y))
+#	machine_node.orientation = 2
+#	print(machine_node.orientation)
 	
 	
 	
@@ -49,7 +49,8 @@ func create_cell(x, y, type, orientation):
 	
 	#now we will create a scene instance to do the work int the game
 	machine_node = loaded_machine_node.instance()
-	get_tree().get_root().call_deferred("add_child",machine_node,true)
+	get_tree().get_root().call_deferred("add_child",machine_node)
+	
 	#add the new instance to a global list of instanced machines
 	Global.machines.append(machine_node)
 	
@@ -83,8 +84,8 @@ func remove_cell(x,y):
 	print(Global.cells)
 	
 	
+# warning-ignore:unused_argument
 func _input(event):
-	
 	mouse = get_viewport().get_mouse_position()
 	loc = world_to_map(mouse)
 	actual_cell_num = get_cell(loc.x, loc.y)
@@ -102,9 +103,6 @@ func _input(event):
 			remove_cell(loc.x, loc.y)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 	
 	
 	

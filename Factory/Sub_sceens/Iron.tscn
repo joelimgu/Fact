@@ -7,6 +7,10 @@
 extents = Vector2( 8, 32 )
 
 [node name="Ingot" type="RigidBody2D"]
+gravity_scale = 0.0
+can_sleep = false
+linear_damp = 0.0
+angular_damp = 0.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

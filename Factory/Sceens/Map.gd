@@ -11,13 +11,16 @@ func coordinate():
 		#print(i)
 	
 
+# warning-ignore:unused_argument
 func instance_machine(cell):
-	var machine1 
+# warning-ignore:unused_variable
+	#var machine1 
 	#machine1 = Machine_Controler.machine.new()
 	#machines.append(machine)
 	pass
 
 
+# warning-ignore:unused_argument
 func _process(delta):
 	coordinate()
 	
