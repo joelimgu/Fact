@@ -12,7 +12,7 @@ var max_assigned_ID
 var cells
 
 var frames_passed_sicnce_started = 0
-#also, tthe tilemap should be asubinstance of a bigger scnene with two sub-scenes 
+#also, the tilemap should be asubinstance of a bigger scnene with two sub-scenes 
 #inside, one for the tilemap, and the other fro the manu and select buttins
 #so no crappy region of no selection neededÌ†ΩÌ∏Å :)
 
