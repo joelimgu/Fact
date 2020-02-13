@@ -386,10 +386,10 @@ __meta__ = {
 }
 
 [node name="Machine1_BTN" type="TextureButton" parent="."]
-margin_left = 858.708
-margin_top = 46.6106
-margin_right = 922.708
-margin_bottom = 110.611
+margin_left = 903.123
+margin_top = 70.2985
+margin_right = 967.123
+margin_bottom = 134.299
 toggle_mode = true
 texture_normal = ExtResource( 1 )
 __meta__ = {
