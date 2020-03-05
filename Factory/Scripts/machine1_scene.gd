@@ -35,5 +35,4 @@ func _process(delta):
 
 
 func _on_Machine_body_entered(body):
-	print(body)
-	print("aaa")
+	pass
