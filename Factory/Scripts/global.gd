@@ -6,10 +6,25 @@ var save_world_path = "res://saves/saved_map.json"
 
 var file = File.new()
 
+
+#ist with all the nodes in the screen they are the actial nodes, not structured, bad id
 var machines =[]
 
+#variable used to assign new id to new cells
 var max_assigned_ID
+
+#actual dictionary with all the cell in the world info to store in json
 var cells
+#	[
+#		{	"id": int,
+#			"x":int,
+#			"y":int,
+#			"type":int,
+#			"orientation":int (0-3)
+#
+#		}
+#	]
+
 
 var frames_passed_sicnce_started = 0
 #also, the tilemap should be asubinstance of a bigger scnene with two sub-scenes 
@@ -46,6 +61,7 @@ func _ready():
 	cells = parse_json(text).cells_list
 	
 	file.close()
+	print(cells)
 
 
 func assing_id():

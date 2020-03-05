@@ -8,6 +8,7 @@
 extents = Vector2( 12.1029, 32 )
 
 [node name="Machine" type="Area2D"]
+light_mask = 2
 z_index = 6
 gravity = 0.0
 linear_damp = 0.0
@@ -29,3 +30,4 @@ shape = SubResource( 1 )
 position = Vector2( 52.7691, 54.7767 )
 scale = Vector2( 0.0588647, 0.0554862 )
 texture = ExtResource( 3 )
+[connection signal="body_entered" from="." to="." method="_on_Machine_body_entered"]

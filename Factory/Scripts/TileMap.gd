@@ -27,7 +27,8 @@ func create_cell(x, y, type, orientation):
 #	create the tile
 	set_cell(x,y,type)
 	var local_ID = Global.assing_id()
-#	if the data is blank, write it to the first if not, append a new one
+#	if the data is blank, write it to the first if not, 
+#	append a new one
 #	i must change this, it was only for testing purposes, i have to edit the reference data for the dictionary to be balnk and only append here
 	if Global.cells[0].id == null:
 		Global.cells[0] = {
@@ -66,10 +67,21 @@ func remove_cell(x,y):
 	var i = 0
 	var c = Global.cells[i]
 	set_cell(x,y,-1)
+	
+	#takes the cell with coordenates (x,y) and stores it in c
 	while not(c.x == x and c.y == y):
 		i +=1
 		c = Global.cells[i]
 		
+	var n = 0
+	var m = Global.machines[n]
+	while not(m.id == c.id):
+		n +=1
+		m = Global.machines[n]
+	
+	get_tree().get_root().remove_child(m)
+	
+	#removes teh cell in (x,y) frm the global list
 	Global.cells.remove(i)
 	if Global.cells.empty():
 		Global.cells.append({
@@ -79,7 +91,7 @@ func remove_cell(x,y):
 			"type":null,
 			"orientation":null
 		})
-		
+	
 	print("list afetr cell deleted:")
 	print(Global.cells)
 	
@@ -101,6 +113,7 @@ func _input(event):
 	elif Input.is_action_pressed("R_click"):
 		if actual_cell_num != -1:
 			remove_cell(loc.x, loc.y)
+			
 	
 
 	
