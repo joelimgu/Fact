@@ -92,9 +92,6 @@ func remove_cell(x,y):
 			"orientation":null
 		})
 	
-	print("list afetr cell deleted:")
-	print(Global.cells)
-	
 	
 # warning-ignore:unused_argument
 func _input(event):

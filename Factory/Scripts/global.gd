@@ -6,6 +6,10 @@ var save_world_path = "res://saves/saved_map.json"
 
 var file = File.new()
 
+var tile_map
+
+
+
 
 #ist with all the nodes in the screen they are the actial nodes, not structured, bad id
 var machines =[]
@@ -45,9 +49,14 @@ var default_data = {"max_assigned_ID":0,"cells_list":[{
 }]}
 
 
-func _ready():
+func load_game():
+	pass
+	#file.open(save_world_path, file.READ)
+
+
+func load_file():
 	file.open(save_world_path, file.READ)
-	
+		
 	if not file.file_exists(save_world_path):
 		file.open(save_world_path, file.WRITE)
 		max_assigned_ID = 0
@@ -61,7 +70,7 @@ func _ready():
 	cells = parse_json(text).cells_list
 	
 	file.close()
-	print(cells)
+	load_game()
 
 
 func assing_id():
@@ -69,9 +78,10 @@ func assing_id():
 	return max_assigned_ID
 
 
-func load_game():
-	pass
-	#file.open(save_world_path, file.READ)
+func _ready():
+	load_file()
+	tile_map = get_node("/root/Main/Machines")
+
 
 
 # warning-ignore:unused_argument

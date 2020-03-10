@@ -33,7 +33,6 @@ func _on_Machine1_BTN_pressed():
 		Machine1_BTN = false
 	else:
 		Machine1_BTN = true
-	print(Machine1_BTN)
 	
 
 func _on_Button_button_down():
