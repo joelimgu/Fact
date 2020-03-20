@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var time
 
@@ -80,7 +80,7 @@ func assing_id():
 
 func _ready():
 	load_file()
-	tile_map = get_node("/root/Main/Machines")
+	#tile_map = get_node("/root/Main/Machines")
 
 
 

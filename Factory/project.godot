@@ -27,7 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Scripts/global.gd"
-Machine_Controler="*res://Scripts/Machine_Controler.gd"
+Machine_Controler="res://Scripts/Machine_Controler.gd"
 
 [display]
 
