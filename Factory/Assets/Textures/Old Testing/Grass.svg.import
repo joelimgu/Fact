@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Iron.png-c78163a0eb603fe6477d07d7d6657ea9.stex"
+path="res://.import/Grass.svg-38bf9bdcbcb47030176613fc75b80ebd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/Iron.png"
-dest_files=[ "res://.import/Iron.png-c78163a0eb603fe6477d07d7d6657ea9.stex" ]
+source_file="res://Assets/Textures/Old Testing/Grass.svg"
+dest_files=[ "res://.import/Grass.svg-38bf9bdcbcb47030176613fc75b80ebd.stex" ]
 
 [params]
 

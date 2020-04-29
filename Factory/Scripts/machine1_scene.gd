@@ -12,7 +12,11 @@ var ingot
 func set_path():
 	get_node("Path2D").curve.add_point(Global.tile_map.map_to_world(Vector2(0,0)))
 	get_node("Path2D").curve.add_point(Global.tile_map.map_to_world(Vector2(0,1)))
-	
+	if Global.tile_map.get_cell(0,1) in Global.conveyorbelts_disctionary:
+			print("true")
+	else:
+		print("false")
+	print(Global.tile_map.get_cell(0,1))
 
 
 func _ready():

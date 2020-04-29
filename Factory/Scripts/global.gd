@@ -8,6 +8,8 @@ var file = File.new()
 
 var tile_map
 
+var conveyorbelts_disctionary = [0,1]
+
 
 
 
@@ -80,10 +82,14 @@ func assing_id():
 
 func _ready():
 	load_file()
-	#tile_map = get_node("/root/Main/Machines")
+	tile_map = get_node("/root/Main/Machines")
 
 
 
 # warning-ignore:unused_argument
 func _process(delta):
 	frames_passed_sicnce_started += 1
+	
+
+
+
