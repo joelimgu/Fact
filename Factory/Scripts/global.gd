@@ -1,23 +1,28 @@
-extends Node2D
+extends Node
+
 
 var time
 
-var save_world_path = "res://saves/saved_map.json"
+var saveWorldPath = "res://saves/saved_map.json"
 
 var file = File.new()
 
-var tile_map
+var map = load("res://subScenes/tileMap.tscn") as PackedScene
 
-var conveyorbelts_disctionary = [0,1]
+var tileMap
+
+var conveyorbeltsDictionary = [0,1]
 
 
 
 
-#ist with all the nodes in the screen they are the actial nodes, not structured, bad id
+
+
+#ist with all the nodes in the screen they are the actual nodes, not structured, bad id
 var machines =[]
 
 #variable used to assign new id to new cells
-var max_assigned_ID
+var maxAssignedID
 
 #actual dictionary with all the cell in the world info to store in json
 var cells
@@ -32,7 +37,7 @@ var cells
 #	]
 
 
-var frames_passed_sicnce_started = 0
+var framesPassedSicnceStarted = 0
 #also, the tilemap should be asubinstance of a bigger scnene with two sub-scenes 
 #inside, one for the tilemap, and the other fro the manu and select buttins
 #so no crappy region of no selection neededÌ†ΩÌ∏Å :)
@@ -42,7 +47,7 @@ var frames_passed_sicnce_started = 0
 #during the program I'll be using andothe array and every dictionary in
 #the array will be an instance of the machine class (conroled in machine 
 #controler.gd)
-var default_data = {"max_assigned_ID":0,"cells_list":[{
+var defaultData = {"maxAssignedID":0,"cellsList":[{
 	"id": null,
 	"x":null,
 	"y":null,
@@ -51,44 +56,45 @@ var default_data = {"max_assigned_ID":0,"cells_list":[{
 }]}
 
 
-func load_game():
+func loadGame():
 	pass
 	#file.open(save_world_path, file.READ)
 
 
-func load_file():
-	file.open(save_world_path, file.READ)
+func loadFile():
+	file.open(saveWorldPath, file.READ)
 		
-	if not file.file_exists(save_world_path):
-		file.open(save_world_path, file.WRITE)
-		max_assigned_ID = 0
-		file.store_string(to_json(default_data))
+	if not file.file_exists(saveWorldPath):
+		file.open(saveWorldPath, file.WRITE)
+		maxAssignedID = 0
+		file.store_string(to_json(defaultData))
 		file.close()
-		file.open(save_world_path, file.READ)
+		file.open(saveWorldPath, file.READ)
 		
 	
 	var text = file.get_as_text()
-	max_assigned_ID = parse_json(text).max_assigned_ID
-	cells = parse_json(text).cells_list
-	
+	print(text)
+	maxAssignedID = parse_json(text).maxAssignedID
+	cells = parse_json(text).cellsList
+
 	file.close()
-	load_game()
+	loadGame()
 
 
-func assing_id():
-	max_assigned_ID +=1
-	return max_assigned_ID
+func assingID():
+	maxAssignedID +=1
+	return maxAssignedID
 
 
 func _ready():
-	load_file()
-	tile_map = get_node("/root/Main/Machines")
+	loadFile()
+	tileMap = map.instance()
 
 
 
 # warning-ignore:unused_argument
 func _process(delta):
-	frames_passed_sicnce_started += 1
+	framesPassedSicnceStarted += 1
 	
 
 

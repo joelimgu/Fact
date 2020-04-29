@@ -4,7 +4,7 @@ export var ingot_speed = 100
 var id
 var type = 0
 var orientation = 2
-var loaded_ingot = preload("res://Sub_sceens/Iron_sprite.tscn")
+var loadedIngot = preload("res://Sub_sceens/Iron_sprite.tscn")
 var ingot
 
 

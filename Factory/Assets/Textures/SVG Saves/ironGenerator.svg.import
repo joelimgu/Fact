@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ironGenerator.svg-b042a434ab579aab228086081012e3d2.stex"
+path="res://.import/ironGenerator.svg-0f139f899174846689a51470048de77c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/SVG Saves/ironGenerator.svg"
-dest_files=[ "res://.import/ironGenerator.svg-b042a434ab579aab228086081012e3d2.stex" ]
+source_file="res://assets/textures/SVG Saves/ironGenerator.svg"
+dest_files=[ "res://.import/ironGenerator.svg-0f139f899174846689a51470048de77c.stex" ]
 
 [params]
 

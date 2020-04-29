@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/conveyorBelt.png-3af7f21aa64252584876f81f851f8cbd.stex"
+path="res://.import/conveyorBelt.png-0406ac1784b988c10e62de01785212b4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/conveyorBelt.png"
-dest_files=[ "res://.import/conveyorBelt.png-3af7f21aa64252584876f81f851f8cbd.stex" ]
+source_file="res://assets/textures/conveyorBelt.png"
+dest_files=[ "res://.import/conveyorBelt.png-0406ac1784b988c10e62de01785212b4.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ironIngotsvg.png-c3d6d5c45ff57ae105b9d8b8f513e093.stex"
+path="res://.import/ironIngotsvg.png-416c2662680e2c24048d429c7c5e1bb7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/ironIngotsvg.png"
-dest_files=[ "res://.import/ironIngotsvg.png-c3d6d5c45ff57ae105b9d8b8f513e093.stex" ]
+source_file="res://assets/textures/ironIngotsvg.png"
+dest_files=[ "res://.import/ironIngotsvg.png-416c2662680e2c24048d429c7c5e1bb7.stex" ]
 
 [params]
 
