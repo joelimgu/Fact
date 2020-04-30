@@ -9,15 +9,16 @@ var mouse
 var loc
 var actualCellNum
 
-var loadedMachineNode = preload(\"res://subScenes/ironGenerator.tscn\")
+const loadedMachineNode = preload(\"res://subScenes/ironGenerator.tscn\")
 var machineNode
 
 var timer
 
 
-func createCell(x, y, type, orientation):
+func createCell(x : int, y: int, type: String, orientation: String):
+	var typeID: int = getCellTypeID(type)
 #	create the tile
-	set_cell(x,y,type)
+	set_cell(x,y,typeID)
 	var localID = global.assingID()
 #	if the data is blank, write it to the first if not, 
 #	append a new one
@@ -51,13 +52,13 @@ func createCell(x, y, type, orientation):
 	machineNode.position = map_to_world(Vector2(x,y))
 	machineNode.orientation = orientation
 	
-	print(\"the cell in 0,0 is:\\n\" + str(global.findCell(Vector2(0,0))))
+	#print(\"the cell in 0,0 is:\\n\" + str(global.findCell(Vector2(0,0))))
 
 
 
 #remove cell and remove from the dictionary
-func removeCell(x,y):
-	var i = 0
+func removeCell(x: int,y: int):
+	var i: int = 0
 	var c = global.cells[i]
 	set_cell(x,y,-1)
 	
@@ -100,10 +101,19 @@ func _input(event):
 #	var the_machine_is_selected = get_tree().get_root().get_node(\"Main\").Machine1_BTN
 	
 	if L_click_pressed && there_is_no_cell_there: #&& the_machine_is_selected: #add tile selected 
-			createCell(loc.x, loc.y, 0,2)
+			createCell(loc.x, loc.y, global.cellSelected, \"south\") #(x,y,type, orientation)
 	elif Input.is_action_pressed(\"R_click\"):
 		if actualCellNum != -1:
 			removeCell(loc.x, loc.y)
+
+
+ 
+func getCellTypeID(cellTypeString: String) -> int:
+	var type : int
+	match cellTypeString:
+		\"ironGenerator\": type = 0
+		\"rightConveyorBelt\": type = 1
+	return type
 "
 
 [node name="TileMap" type="TileMap"]

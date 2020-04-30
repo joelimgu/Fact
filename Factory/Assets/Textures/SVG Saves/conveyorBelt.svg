@@ -7,47 +7,47 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="conveyorBelt.svg"
-   inkscape:version="1.0beta2 (f3d5b5a, 2020-03-13)"
-   id="svg8"
+   width="256"
+   height="256"
+   viewBox="0 0 67.73248 67.73248"
    version="1.1"
-   viewBox="0 0 33.86624 33.86624"
-   height="128"
-   width="128">
+   id="svg8"
+   inkscape:version="1.0beta2 (f3d5b5a, 2020-03-13)"
+   sodipodi:docname="conveyorBelt.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     inkscape:showpageshadow="false"
-     inkscape:window-maximized="1"
-     inkscape:window-y="-11"
-     inkscape:window-x="-11"
-     inkscape:window-height="986"
-     inkscape:window-width="1920"
-     inkscape:snap-center="true"
-     inkscape:snap-bbox-edge-midpoints="true"
-     inkscape:snap-bbox-midpoints="true"
-     inkscape:snap-intersection-paths="false"
-     inkscape:snap-smooth-nodes="true"
-     inkscape:snap-midpoints="true"
-     inkscape:snap-object-midpoints="true"
-     inkscape:bbox-paths="true"
-     inkscape:bbox-nodes="true"
-     inkscape:snap-bbox="true"
-     inkscape:pagecheckerboard="false"
-     units="px"
-     showgrid="false"
-     inkscape:document-rotation="0"
-     inkscape:current-layer="layer1"
-     inkscape:document-units="px"
-     inkscape:cy="64.976624"
-     inkscape:cx="59.972062"
-     inkscape:zoom="3.9754288"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     borderopacity="1.0"
-     bordercolor="#666666"
+     id="base"
      pagecolor="#ffffff"
-     id="base" />
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.9877144"
+     inkscape:cx="-5.5134056"
+     inkscape:cy="117.21533"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:pagecheckerboard="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-intersection-paths="false"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="false" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -61,48 +61,51 @@
     </rdf:RDF>
   </metadata>
   <g
-     id="layer1"
+     inkscape:label="Capa 1"
      inkscape:groupmode="layer"
-     inkscape:label="Capa 1">
+     id="layer1">
     <g
-       transform="scale(0.06666667)"
-       id="g838">
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\conveyorBelt.png"
+       id="g838"
+       transform="scale(0.06666667)">
       <rect
-         y="0"
-         x="0"
-         height="507.99359"
-         width="507.99359"
-         id="rect14"
-         style="fill:#65c4ff;fill-rule:evenodd;stroke-width:0.264583"
+         ry="79.374001"
          rx="79.374001"
-         ry="79.374001" />
+         style="fill:#65c4ff;fill-rule:evenodd;stroke-width:0.264583"
+         id="rect14"
+         width="507.99359"
+         height="507.99359"
+         x="0"
+         y="0" />
       <g
-         transform="translate(19.147614)"
-         id="g19">
+         id="g19"
+         transform="translate(19.147614)">
         <path
-           sodipodi:type="star"
-           style="fill:#ffa560;stroke-width:0.26458"
-           id="path10"
-           sodipodi:sides="3"
-           sodipodi:cx="310.98926"
-           sodipodi:cy="253.9968"
-           sodipodi:r1="113.98493"
-           sodipodi:r2="56.992462"
-           sodipodi:arg1="0"
-           sodipodi:arg2="1.0471976"
-           inkscape:flatsided="false"
-           inkscape:rounded="0"
-           inkscape:randomized="0"
+           inkscape:transform-center-x="-28.496232"
            d="m 424.97419,253.9968 -85.4887,49.35692 -85.4887,49.35692 1e-5,-98.71385 -1e-5,-98.71384 85.4887,49.35693 z"
-           inkscape:transform-center-x="-28.496232" />
-        <rect
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="false"
+           sodipodi:arg2="1.0471976"
+           sodipodi:arg1="0"
+           sodipodi:r2="56.992462"
+           sodipodi:r1="113.98493"
+           sodipodi:cy="253.9968"
+           sodipodi:cx="310.98926"
+           sodipodi:sides="3"
+           id="path10"
            style="fill:#ffa560;stroke-width:0.26458"
-           id="rect15"
-           width="252.37212"
-           height="103.29153"
-           x="44.724174"
+           sodipodi:type="star" />
+        <rect
+           rx="26.458"
            y="203.38849"
-           rx="26.458" />
+           x="44.724174"
+           height="103.29153"
+           width="252.37212"
+           id="rect15"
+           style="fill:#ffa560;stroke-width:0.26458" />
       </g>
     </g>
   </g>

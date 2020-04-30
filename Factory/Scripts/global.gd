@@ -1,9 +1,10 @@
 extends Node
 
+const conveyorbeltsList =  ["rightConveyorBelt"]
+
+const saveWorldPath = "res://saves/saved_map.json"
 
 var time
-
-var saveWorldPath = "res://saves/saved_map.json"
 
 var file = File.new()
 
@@ -11,18 +12,13 @@ var map = load("res://subScenes/tileMap.tscn") as PackedScene
 
 var tileMap
 
-var conveyorbeltsDictionary = [0,1]
-
-
-
-
-
+var cellSelected : String = "ironGenerator"
 
 #ist with all the nodes in the screen they are the actual nodes, not structured, bad id
 var machines =[]
 
 #variable used to assign new id to new cells
-var maxAssignedID
+var maxAssignedID: int
 
 #actual dictionary with all the cell in the world info to store in json
 var cells
@@ -37,7 +33,7 @@ var cells
 #	]
 
 
-var framesPassedSicnceStarted = 0
+var framesPassedSicnceStarted: int = 0
 #also, the tilemap should be asubinstance of a bigger scnene with two sub-scenes 
 #inside, one for the tilemap, and the other fro the manu and select buttins
 #so no crappy region of no selection neededÌ†ΩÌ∏Å :)
@@ -47,7 +43,7 @@ var framesPassedSicnceStarted = 0
 #during the program I'll be using andothe array and every dictionary in
 #the array will be an instance of the machine class (conroled in machine 
 #controler.gd)
-var defaultData = {"maxAssignedID":0,"cellsList":[{
+const defaultData = {"maxAssignedID":0,"cellsList":[{
 	"id": null,
 	"x":null,
 	"y":null,
@@ -97,16 +93,25 @@ func _process(delta):
 	framesPassedSicnceStarted += 1
 	
 	
-#its only working whtn the firs cell created is at the position for some reason
-func findCell(mapCoordenates):
-	var id = null
+#returns the cell with the indicated coordinates
+func findCell(mapCoordenates: Vector2):
+	var cell = null
 	for N in global.cells.size():
 		if global.cells[N]["x"] == mapCoordenates.x && global.cells[N]["y"] == mapCoordenates.y:
-			id = global.cells[N]["id"]
-			print("the function findCell has found cell.id = " + str(id) +"\n(result of funciton ln 107 in global)")
-	return id
+			cell = global.cells[N]
+			print("the function findCell has found cell.id = " + str(cell["id"]) +"\n(result of funciton ln 107 in global)")
+	return cell
 		
 		
+func getOrientationID(orientation: String):
+	var orientationID: int = 2
+	match orientation:
+		"north" : orientationID = 0
+		"east" : orientationID = 1
+		"south" : orientationID = 2
+		"west" : orientationID = 3
+	return orientationID
+
 
 
 

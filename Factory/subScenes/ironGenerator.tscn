@@ -6,7 +6,7 @@
 script/source = "extends RigidBody2D
 
 
-export var ingotSpeed = 100
+export(int) var ingotSpeed: int = 100
 var id
 var type = 0
 var orientation = 2
@@ -19,7 +19,7 @@ var ingot
 func setPath():
 	get_node(\"Path2D\").curve.add_point(global.tileMap.map_to_world(Vector2(0,0)) + Vector2(64,64))
 	get_node(\"Path2D\").curve.add_point(global.tileMap.map_to_world(Vector2(0,1))+ Vector2(64,64))
-#	print(global.findCell(global.tileMap.map_to_world(Vector2(0,1))))
+	print(global.findCell(Vector2(0,1) + global.tileMap.world_to_map(self.position)))
 	
 #	if global.tileMap.get_cell(0,1) in global.conveyorbeltsDictionary:
 #		print(\"true\")
