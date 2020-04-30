@@ -50,6 +50,8 @@ func createCell(x, y, type, orientation):
 	machineNode.id = localID
 	machineNode.position = map_to_world(Vector2(x,y))
 	machineNode.orientation = orientation
+	
+	print(\"the cell in 0,0 is:\\n\" + str(global.findCell(Vector2(0,0))))
 
 
 

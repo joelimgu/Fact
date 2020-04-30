@@ -73,7 +73,7 @@ func loadFile():
 		
 	
 	var text = file.get_as_text()
-	print(text)
+	print("The var text loading file is :\n" + text + "\n(line 76 global.dg)\n")
 	maxAssignedID = parse_json(text).maxAssignedID
 	cells = parse_json(text).cellsList
 
@@ -96,6 +96,18 @@ func _ready():
 func _process(delta):
 	framesPassedSicnceStarted += 1
 	
+	
+#its only working whtn the firs cell created is at the position for some reason
+func findCell(mapCoordenates):
+	var id = null
+	for N in global.cells.size():
+		if global.cells[N]["x"] == mapCoordenates.x && global.cells[N]["y"] == mapCoordenates.y:
+			id = global.cells[N]["id"]
+			print("the function findCell has found cell.id = " + str(id) +"\n(result of funciton ln 107 in global)")
+	return id
+		
+		
+
 
 
 
