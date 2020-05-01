@@ -2,11 +2,12 @@ extends Node
 
 const conveyorbeltsList =  ["rightConveyorBelt"]
 
+
 const saveWorldPath = "res://saves/saved_map.json"
 
 var time
 
-var file = File.new()
+
 
 var map = load("res://subScenes/tileMap.tscn") as PackedScene
 
@@ -15,7 +16,7 @@ var tileMap
 var cellSelected : String = "ironGenerator"
 
 #ist with all the nodes in the screen they are the actual nodes, not structured, bad id
-var machines =[]
+var machines =[] #shuld be replaceable by getting the Machine childs list
 
 #variable used to assign new id to new cells
 var maxAssignedID: int
@@ -57,7 +58,8 @@ func loadGame():
 	#file.open(save_world_path, file.READ)
 
 
-func loadFile():
+func loadSaveFile():
+	var file = File.new()
 	file.open(saveWorldPath, file.READ)
 		
 	if not file.file_exists(saveWorldPath):
@@ -83,7 +85,7 @@ func assingID():
 
 
 func _ready():
-	loadFile()
+	loadSaveFile()
 	tileMap = map.instance()
 
 
@@ -113,6 +115,16 @@ func getOrientationID(orientation: String):
 	return orientationID
 
 
+func readJSONFile(path: String):
+	var file = File.new()
+	file.open(path, file.READ)
+	var text = file.get_as_text()
+	return parse_json(text)
 
 
-
+func getMachineScenePath(machine: String) -> String:
+	var path : String
+	match machine :
+		"ironGenerator" : path = "res://subScenes/ironGenerator.tscn"
+		"rightConveyorBelt": path = "res://subScenes/rightConveyorBelt.tscn"
+	return path

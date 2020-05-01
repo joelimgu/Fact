@@ -1,23 +1,33 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/textures/ironGenerator.png" type="Texture" id=1]
 [ext_resource path="res://assets/textures/conveyorBelt.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/GUI/backArrow.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/GUI/stop.png" type="Texture" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
-
-
-
-
+signal exitMachneSelection
 
 
 func _on_ironGeneratorButton_button_up():
 	global.cellSelected = \"ironGenerator\"
+	emit_signal(\"exitMachneSelection\")
 
 
 func _on_rigthConveyorBelt_button_up():
 	global.cellSelected = \"rightConveyorBelt\"
+	emit_signal(\"exitMachneSelection\")
+
+
+func _on_backArrowButton_pressed():
+	emit_signal(\"exitMachneSelection\")
+
+
+func _on_removeButton_button_up():
+	global.cellSelected = \"delete\"
+	emit_signal(\"exitMachneSelection\")
 "
 
 [node name="Control" type="Control"]
@@ -42,11 +52,37 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 268.0
+margin_right = 408.0
+margin_bottom = 154.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 154.0
+
+[node name="removeButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+margin_right = 128.0
+margin_bottom = 128.0
+texture_normal = ExtResource( 4 )
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 136.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 140.0
+margin_right = 128.0
+margin_bottom = 154.0
+text = "Delete"
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+margin_left = 132.0
+margin_right = 136.0
 margin_bottom = 154.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_right = 128.0
+margin_left = 140.0
+margin_right = 268.0
 margin_bottom = 154.0
 
 [node name="ironGeneratorButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
@@ -69,13 +105,13 @@ margin_bottom = 154.0
 text = "Iron Generator"
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
-margin_left = 132.0
-margin_right = 136.0
+margin_left = 272.0
+margin_right = 276.0
 margin_bottom = 154.0
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 140.0
-margin_right = 268.0
+margin_left = 280.0
+margin_right = 408.0
 margin_bottom = 154.0
 
 [node name="rigthConveyorBelt" type="TextureButton" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
@@ -96,5 +132,17 @@ margin_top = 140.0
 margin_right = 128.0
 margin_bottom = 154.0
 text = "Right Conveyor Belt"
+
+[node name="backArrowButton" type="TextureButton" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 65.1875
+margin_bottom = 45.625
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer3/removeButton" to="." method="_on_removeButton_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer/ironGeneratorButton" to="." method="_on_ironGeneratorButton_button_up"]
 [connection signal="button_up" from="VBoxContainer/HBoxContainer/VBoxContainer2/rigthConveyorBelt" to="." method="_on_rigthConveyorBelt_button_up"]
+[connection signal="pressed" from="backArrowButton" to="." method="_on_backArrowButton_pressed"]

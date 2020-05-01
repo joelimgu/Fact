@@ -7,9 +7,9 @@ script/source = "extends RigidBody2D
 
 
 export(int) var ingotSpeed: int = 100
-var id
-var type = 0
-var orientation = 2
+var id : int
+var type : String = \"ironGenerator\"
+var orientation: int = 2
 var loadedIngot = preload(\"res://subScenes/ironIngot.tscn\")
 var ingot
 
@@ -79,6 +79,7 @@ _data = {
 [node name="RigidBody2D" type="RigidBody2D"]
 collision_layer = 0
 collision_mask = 0
+mode = 1
 mass = 65535.0
 gravity_scale = 0.0
 script = SubResource( 1 )

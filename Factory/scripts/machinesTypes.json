@@ -1,0 +1,6 @@
+{
+	"ironGenerator":{
+		"scenePath":"res://subScenes/ironGenerator.tscn"
+		"tileID":0
+	}	
+}

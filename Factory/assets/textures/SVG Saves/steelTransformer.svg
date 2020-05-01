@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="48"
+   inkscape:export-xdpi="48"
+   inkscape:export-filename="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\steelTransformer.png"
+   sodipodi:docname="steelTransformer.svg"
+   inkscape:version="1.0beta2 (f3d5b5a, 2020-03-13)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 67.73248 67.73248"
+   height="256"
+   width="256">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-11"
+     inkscape:window-x="-11"
+     inkscape:window-height="986"
+     inkscape:window-width="1920"
+     inkscape:snap-center="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-intersection-paths="false"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox="true"
+     inkscape:pagecheckerboard="false"
+     units="px"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="69.907758"
+     inkscape:cx="88.686198"
+     inkscape:zoom="3.9754287"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:showpageshadow="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Capa 1">
+    <rect
+       ry="5.2916002"
+       rx="5.2916002"
+       style="fill:#65c4ff;fill-rule:evenodd;stroke-width:0.0176389"
+       id="rect14"
+       width="33.866241"
+       height="33.866241"
+       x="0"
+       y="0" />
+    <image
+       sodipodi:absref="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\SVG Saves\steelIngot.svg"
+       xlink:href="steelIngot.svg"
+       id="use875"
+       height="22.154253"
+       width="23.202387"
+       inkscape:svg-dpi="96"
+       preserveAspectRatio="none"
+       x="20.711447"
+       y="13.139553" />
+    <image
+       sodipodi:absref="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\SVG Saves\ironIngot.svg"
+       xlink:href="ironIngot.svg"
+       y="4.4823904"
+       x="2.6769855"
+       preserveAspectRatio="none"
+       inkscape:svg-dpi="96"
+       width="22.300262"
+       height="20.169455"
+       id="image908" />
+    <image
+       sodipodi:absref="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\SVG Saves\coal.svg"
+       xlink:href="coal.svg"
+       y="14.567118"
+       x="-0.015241623"
+       preserveAspectRatio="none"
+       inkscape:svg-dpi="96"
+       width="41.453377"
+       height="41.453377"
+       id="image1568"
+       inkscape:export-filename="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\steelGenerator.png"
+       inkscape:export-xdpi="78.429298"
+       inkscape:export-ydpi="78.429298" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 9.4411621,11.539738 c 2.5412759,4.094278 9.0356479,3.811913 9.0356479,3.811913 0,0 -6.070826,-0.470606 -9.2238899,2.211852"
+       id="path1624"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc" />
+    <path
+       sodipodi:type="star"
+       style="fill:#010101;stroke:#000000;stroke-width:0.52916;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path1626"
+       sodipodi:sides="3"
+       sodipodi:cx="18.47681"
+       sodipodi:cy="15.351651"
+       sodipodi:r1="2.0241556"
+       sodipodi:r2="1.0120779"
+       sodipodi:arg1="0.16514868"
+       sodipodi:arg2="1.2123462"
+       inkscape:flatsided="true"
+       inkscape:rounded="0.11"
+       inkscape:randomized="0"
+       d="m 20.473425,15.68442 c -0.0634,0.380407 -2.985368,1.475076 -3.283108,1.229966 -0.297741,-0.24511 0.215231,-3.322942 0.576373,-3.458239 0.361142,-0.135296 2.770136,1.847867 2.706735,2.228273 z"
+       inkscape:transform-center-x="-0.37030252"
+       inkscape:transform-center-y="-0.053973085"
+       transform="rotate(-6.1375108,18.47681,15.351651)" />
+  </g>
+</svg>

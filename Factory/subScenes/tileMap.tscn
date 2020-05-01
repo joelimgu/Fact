@@ -14,68 +14,84 @@ var machineNode
 
 var timer
 
+signal removeChild(node)
+
 
 func createCell(x : int, y: int, type: String, orientation: String):
 	var typeID: int = getCellTypeID(type)
-#	create the tile
-	set_cell(x,y,typeID)
-	var localID = global.assingID()
-#	if the data is blank, write it to the first if not, 
-#	append a new one
-#	i must change this, it was only for testing purposes, i have to edit the reference data for the dictionary to be balnk and only append here
-	if global.cells[0].id == null:
-		global.cells[0] = {
-			\"id\": localID,
-			\"x\":x,
-			\"y\":y,
-			\"type\":type,
-			\"orientation\":orientation	
-		}
+	#watch if it need to create or remove
+	if typeID == -1:
+		print(\"going to remove\")
+		removeCell(x,y)
 	else:
-		global.cells.append({
-			\"id\": localID,
-			\"x\":x,
-			\"y\":y,
-			\"type\":type,
-			\"orientation\":orientation	
-		})
+	#	create the tile
+		set_cell(x,y,1)
+		var localID = global.assingID()
+		
+	#	if the data is blank, write it to the first if not, 
+	#	append a new one
+	#	i must change this, it was only for testing purposes, i have to edit the reference data for the dictionary to be balnk and only append here
+		if global.cells[0].id == null:
+			global.cells[0] = {
+				\"id\": localID,
+				\"x\":x,
+				\"y\":y,
+				\"type\":type,
+				\"orientation\":orientation	
+			}
+		else:
+			global.cells.append({
+				\"id\": localID,
+				\"x\":x,
+				\"y\":y,
+				\"type\":type,
+				\"orientation\":orientation	
+			})
+	
+		get_parent().addMachineToMap(x, y, type , orientation, localID)
+	
 
-	
-	#now we will create a scene instance to do the work int the game
-	machineNode = loadedMachineNode.instance()
-	get_tree().get_root().call_deferred(\"add_child\",machineNode)
-	
-	#add the new instance to a global list of instanced machines
-	global.machines.append(machineNode)
-	
-	machineNode.id = localID
-	machineNode.position = map_to_world(Vector2(x,y))
-	machineNode.orientation = orientation
-	
-	#print(\"the cell in 0,0 is:\\n\" + str(global.findCell(Vector2(0,0))))
+
 
 
 
 #remove cell and remove from the dictionary
 func removeCell(x: int,y: int):
+	print(\"removing\")
 	var i: int = 0
 	var c = global.cells[i]
 	set_cell(x,y,-1)
-	
-	#takes the cell with coordenates (x,y) and stores it in c
-	while not(c.x == x and c.y == y):
-		i +=1
-		c = global.cells[i]
+	var cellFoudID : int = -1
+
+	#find machine id at coordinates (x,y)
+	for N in global.cells.size():
+		if global.cells[N-1].x == x && global.cells[N].y == y:
+			print(\"tenemos uno kau!\")
+			cellFoudID = global.cells[N].id
+			
+			#remove the node from the scene tree and the node list
+			for i in global.machines.size():
+				if global.machines[0].id == cellFoudID:
+					emit_signal(\"removeChild\",global.machines[i])
+					global.machines.remove(i)
+					print(\"removed from node list\")
+			global.cells.remove(N)
+
+
+
 		
-	var n = 0
-	var m = global.machines[n]
-	while not(m.id == c.id):
-		n +=1
-		m = global.machines[n]
+		
+#	var n = 0
+#	var m = global.machines[n]
+#	while not(m.id == c.id):
+#		n +=1
+#		m = global.machines[n]
+#
+##	get_tree().get_root().remove_child(m)
+#	emit_signal(\"removeChild\",m)
+	print(\"send\")
 	
-	get_tree().get_root().remove_child(m)
-	
-	#removes teh cell in (x,y) frm the global list
+	#removes teh cell in (x,y) from the global list
 	global.cells.remove(i)
 	if global.cells.empty():
 		global.cells.append({
@@ -100,7 +116,7 @@ func _input(event):
 	var there_is_no_cell_there = actualCellNum == -1
 #	var the_machine_is_selected = get_tree().get_root().get_node(\"Main\").Machine1_BTN
 	
-	if L_click_pressed && there_is_no_cell_there: #&& the_machine_is_selected: #add tile selected 
+	if L_click_pressed: #&& there_is_no_cell_there: #&& the_machine_is_selected: #add tile selected 
 			createCell(loc.x, loc.y, global.cellSelected, \"south\") #(x,y,type, orientation)
 	elif Input.is_action_pressed(\"R_click\"):
 		if actualCellNum != -1:
@@ -111,6 +127,7 @@ func _input(event):
 func getCellTypeID(cellTypeString: String) -> int:
 	var type : int
 	match cellTypeString:
+		\"delete\": type = -1
 		\"ironGenerator\": type = 0
 		\"rightConveyorBelt\": type = 1
 	return type

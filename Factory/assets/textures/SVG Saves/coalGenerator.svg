@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="50.046898"
+   inkscape:export-xdpi="50.046898"
+   inkscape:export-filename="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\coalGenerator.png"
+   width="256"
+   height="256"
+   viewBox="0 0 67.73248 67.73248"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0beta2 (f3d5b5a, 2020-03-13)"
+   sodipodi:docname="coalGenerator.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     inkscape:showpageshadow="false"
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8110526"
+     inkscape:cx="61.898451"
+     inkscape:cy="107.26618"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:pagecheckerboard="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-intersection-paths="false"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       y="0"
+       x="0"
+       height="33.866241"
+       width="33.866241"
+       id="rect14"
+       style="fill:#65c4ff;fill-rule:evenodd;stroke-width:0.0176389"
+       rx="5.2916002"
+       ry="5.2916002" />
+    <image
+       sodipodi:absref="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\SVG Saves\coal.svg"
+       xlink:href="coal.svg"
+       y="2.7702332"
+       x="2.7702332"
+       preserveAspectRatio="none"
+       inkscape:svg-dpi="96"
+       width="62.192017"
+       height="62.192017"
+       id="image854" />
+  </g>
+</svg>
