@@ -8,50 +8,50 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:export-ydpi="50.046898"
-   inkscape:export-xdpi="50.046898"
-   inkscape:export-filename="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\coalGenerator.png"
-   width="256"
-   height="256"
-   viewBox="0 0 67.73248 67.73248"
-   version="1.1"
-   id="svg8"
+   sodipodi:docname="coalGenerator.svg"
    inkscape:version="1.0beta2 (f3d5b5a, 2020-03-13)"
-   sodipodi:docname="coalGenerator.svg">
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 67.73248 67.73248"
+   height="256"
+   width="256"
+   inkscape:export-filename="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\coalGenerator.png"
+   inkscape:export-xdpi="48"
+   inkscape:export-ydpi="48">
   <defs
      id="defs2" />
   <sodipodi:namedview
-     inkscape:showpageshadow="false"
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="2.8110526"
-     inkscape:cx="61.898451"
-     inkscape:cy="107.26618"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="false"
-     units="px"
-     inkscape:pagecheckerboard="false"
-     inkscape:snap-bbox="true"
-     inkscape:bbox-nodes="true"
-     inkscape:bbox-paths="true"
-     inkscape:snap-object-midpoints="true"
-     inkscape:snap-midpoints="true"
-     inkscape:snap-smooth-nodes="true"
-     inkscape:snap-intersection-paths="false"
-     inkscape:snap-bbox-midpoints="true"
-     inkscape:snap-bbox-edge-midpoints="true"
-     inkscape:snap-center="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="986"
-     inkscape:window-x="-11"
+     inkscape:window-maximized="1"
      inkscape:window-y="-11"
-     inkscape:window-maximized="1" />
+     inkscape:window-x="-11"
+     inkscape:window-height="986"
+     inkscape:window-width="1920"
+     inkscape:snap-center="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:snap-intersection-paths="false"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox="true"
+     inkscape:pagecheckerboard="false"
+     units="px"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="107.26618"
+     inkscape:cx="61.898451"
+     inkscape:zoom="2.8110526"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:showpageshadow="false" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -60,23 +60,23 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Capa 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Capa 1">
     <rect
-       y="0"
-       x="0"
-       height="33.866241"
-       width="33.866241"
-       id="rect14"
-       style="fill:#65c4ff;fill-rule:evenodd;stroke-width:0.0176389"
+       ry="5.2916002"
        rx="5.2916002"
-       ry="5.2916002" />
+       style="fill:#65c4ff;fill-rule:evenodd;stroke-width:0.0176389"
+       id="rect14"
+       width="33.866241"
+       height="33.866241"
+       x="0"
+       y="0" />
     <image
        sodipodi:absref="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\SVG Saves\coal.svg"
        xlink:href="coal.svg"

@@ -2,20 +2,24 @@
 
 [ext_resource path="res://assets/textures/conveyorBelt.png" type="Texture" id=1]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends RigidBody2D
 
 var id : int
 var type : String = \"rightConveyorBelt\"
 var orientation: int = 2
+
 "
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 64 )
 
-[node name="rightConveyorBelt" type="RigidBody2D"]
+[node name="rightConveyorBelt" type="RigidBody2D" groups=[
+"orientableTile",
+]]
+z_index = 1
 mode = 1
-script = SubResource( 2 )
+script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -23,4 +27,4 @@ offset = Vector2( 64, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 64, 64 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )

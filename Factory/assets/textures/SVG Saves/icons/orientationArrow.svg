@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0beta2 (f3d5b5a, 2020-03-13)"
+   sodipodi:docname="orientationArrow.svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 256 256"
+   height="256mm"
+   width="256mm">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-11"
+     inkscape:window-x="-11"
+     inkscape:window-height="986"
+     inkscape:window-width="1920"
+     inkscape:guide-bbox="true"
+     showguides="true"
+     inkscape:showpageshadow="false"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="63.904021"
+     inkscape:cx="68.323238"
+     inkscape:zoom="4"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base">
+    <sodipodi:guide
+       inkscape:color="rgb(0,0,255)"
+       inkscape:locked="false"
+       inkscape:label=""
+       id="guide833"
+       orientation="0,1"
+       position="31.999999,223.99999" />
+    <sodipodi:guide
+       inkscape:color="rgb(0,0,255)"
+       inkscape:locked="false"
+       inkscape:label=""
+       id="guide835"
+       orientation="-1,0"
+       position="31.999999,223.99999" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Capa 1">
+    <rect
+       inkscape:export-ydpi="25.4"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-filename="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\GUI\orientationArrow.png"
+       ry="0.8888889"
+       rx="0.11977788"
+       y="11.444445"
+       x="2.0090134"
+       height="7.1111112"
+       width="17.422237"
+       id="rect837"
+       style="fill:#ff6565;stroke:#ff6565;stroke-width:0.983821;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:export-ydpi="25.4"
+       inkscape:export-xdpi="25.4"
+       inkscape:export-filename="C:\Users\joeli\OneDrive\Documents_Me\Altres\Jocs\Fact\Factory\assets\textures\GUI\orientationArrow.png"
+       transform="matrix(1.1290831,-0.0396499,0.0396499,1.1290831,-2.5969035,0.07447577)"
+       inkscape:transform-center-y="0.016557309"
+       inkscape:transform-center-x="-1.9014032"
+       d="m 29.200089,14.311436 c 0.0055,-0.144699 -12.928647,6.681989 -12.806082,6.759097 0.122566,0.07711 0.677553,-14.5375315 0.549492,-14.4699405 -0.128061,0.067591 12.251095,7.8555435 12.25659,7.7108435 z"
+       inkscape:randomized="0"
+       inkscape:rounded="-0.01"
+       inkscape:flatsided="true"
+       sodipodi:arg2="1.085154"
+       sodipodi:arg1="0.037956445"
+       sodipodi:r2="4.1801229"
+       sodipodi:r1="8.3602457"
+       sodipodi:cy="13.994187"
+       sodipodi:cx="20.845865"
+       sodipodi:sides="3"
+       id="path839"
+       style="fill:#ff6565;stroke:#ff6565;stroke-width:1.61557;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       sodipodi:type="star" />
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends PathFollow2D
+
+var speed: float
+var lastOffset: float
+
+func _process(delta):
+	lastOffset = self.offset
+	self.offset += speed
+	if lastOffset == self.offset:
+		get_parent().remove_child(self)
+"
+
+[node name="PathFollow2D" type="PathFollow2D"]
+rotate = false
+loop = false
+script = SubResource( 1 )

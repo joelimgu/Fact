@@ -50,7 +50,6 @@ func createCell(x : int, y: int, type: String, orientation: String):
 
 #remove cell and remove from the dictionary
 func removeCell(x: int,y: int):
-	var i: int = 0
 	set_cell(x,y,-1)
 	var cellFoudID : int = -1
 	var machineNode
@@ -75,6 +74,9 @@ func removeCell(x: int,y: int):
 		global.cells.remove(cellIndex)
 
 
+func updateOrientation(newOrientation:String, pos : Vector2):
+	get_tree().call_group(\"orientableTile\", \"orientate\", \"north\", pos)
+
 
 # warning-ignore:unused_argument
 func _input(event):
@@ -91,8 +93,12 @@ func _input(event):
 	if L_click_pressed: #&& the_machine_is_selected: #add tile selected 
 		if global.cellSelected == \"delete\":
 			removeCell(loc.x, loc.y)
+		elif global.cellSelected == \"leftRotate\":
+			updateOrientation(\"leftRotate\", loc)
 		elif thereIsNoCellThere:
 			createCell(loc.x, loc.y, global.cellSelected, \"south\") #(x,y,type, orientation)
+		get_tree().call_group(\"generators\", \"updatePath\")
+	
 #	elif Input.is_action_pressed(\"R_click\"):
 #		if actualCellNum != -1:
 			

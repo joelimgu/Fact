@@ -15,10 +15,9 @@ func _ready():
 
 
 func addMachineToMap(x: int, y: int, type: String, orientation: String, id : int ):
-	var machinePath : String = global.getMachineScenePath(type)
+	var machinePath : String = global.getScenePath(type)
 	var node = load(machinePath).instance()
 	node.id = id
-	node.type = type
 	node.orientation = orientation
 	node.position = global.tileMap.map_to_world(Vector2(x,y))
 	

@@ -1,24 +1,23 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/textures/ironIngotsvg.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/coal.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 16 )
+extents = Vector2( 32, 24 )
 
 [node name="Area2D" type="Area2D" groups=[
-"ironIngot",
+"coalIngot",
 ]]
 z_index = 2
 z_as_relative = false
 input_pickable = false
-gravity_vec = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="." groups=[
-"ironIngot",
+"coalIngot",
 ]]
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
-"ironIngot",
+"coalIngot",
 ]]
 shape = SubResource( 1 )

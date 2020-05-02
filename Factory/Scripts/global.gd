@@ -97,7 +97,6 @@ func findCell(mapCoordenates: Vector2):
 	for N in global.cells.size():
 		if global.cells[N]["x"] == mapCoordenates.x && global.cells[N]["y"] == mapCoordenates.y:
 			cell = global.cells[N]
-			print("the function findCell has found cell.id = " + str(cell["id"]) +"\n(result of funciton ln 107 in global)")
 	return cell
 		
 		
@@ -118,11 +117,13 @@ func readJSONFile(path: String):
 	return parse_json(text)
 
 
-func getMachineScenePath(machine: String) -> String:
+func getScenePath(machine: String) -> String:
 	var path : String
 	match machine :
 		"ironGenerator" : path = "res://subScenes/ironGenerator.tscn"
 		"rightConveyorBelt": path = "res://subScenes/rightConveyorBelt.tscn"
+		"coalGenerator": path = "res://subScenes/coalGenerator.tscn"
+		"steelTransformer": path = "res://subScenes/steelTransformer.tscn"
 	return path
 
 
@@ -130,5 +131,4 @@ func getNextRelativePlaceForPath(foudCell: String) -> Vector2:
 	var vectorToReturn : Vector2
 	match foudCell:
 		"rightConveyorBelt" : vectorToReturn = Vector2(1,0)
-	print(vectorToReturn)
 	return vectorToReturn

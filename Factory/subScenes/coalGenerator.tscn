@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/textures/ironGenerator.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/coalGenerator.png" type="Texture" id=1]
 [ext_resource path="res://subScenes/ArrowSprites.tscn" type="PackedScene" id=2]
 
 [sub_resource type="GDScript" id=1]
@@ -10,10 +10,10 @@ script/source = "extends RigidBody2D
 export(float) var ingotSpeed: float
 export(int) var generationSpeed : int
 var id : int
-const type : String = \"ironGenerator\"
+const type : String = \"coalGenerator\"
 var orientation: String = \"south\"
 const loadedResourceFollowPath2D = preload(\"res://subScenes/PathFollow2DForMaterials.tscn\")
-const loadedResource = preload(\"res://subScenes/ironIngot.tscn\")
+const loadedResource = preload(\"res://subScenes/coalIngot.tscn\")
 var pathDone : Vector2
 
 
@@ -45,11 +45,7 @@ func continuePath():
 
 
 func _ready():
-	var arrowsScene = load(\"res://subScenes/ArrowSprites.tscn\")
-	var arrows = arrowsScene.instance()
-	self.add_child(arrows)
 	get_node(\"Timer\").wait_time = generationSpeed
-	
 
 
 func addPointToPath(nodePathToAddTo: String,vectorToAdd: Vector2):
@@ -84,7 +80,7 @@ func generateResource():
 
 func _on_Timer_timeout():
 	generateResource()
-
+	
 
 func orientate(newOrientation: String, pos: Vector2):
 	if pos == global.tileMap.world_to_map(self.position):
@@ -119,6 +115,7 @@ texture = ExtResource( 1 )
 offset = Vector2( 64, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 64, 64 )
 scale = Vector2( 5, 1 )
 shape = SubResource( 2 )
