@@ -10,7 +10,7 @@ var loc
 var actualCellNum
 
 const loadedMachineNode = preload(\"res://subScenes/ironGenerator.tscn\")
-var machineNode
+
 
 var timer
 
@@ -21,7 +21,6 @@ func createCell(x : int, y: int, type: String, orientation: String):
 	var typeID: int = getCellTypeID(type)
 	#watch if it need to create or remove
 	if typeID == -1:
-		print(\"going to remove\")
 		removeCell(x,y)
 	else:
 	#	create the tile
@@ -31,14 +30,8 @@ func createCell(x : int, y: int, type: String, orientation: String):
 	#	if the data is blank, write it to the first if not, 
 	#	append a new one
 	#	i must change this, it was only for testing purposes, i have to edit the reference data for the dictionary to be balnk and only append here
-		if global.cells[0].id == null:
-			global.cells[0] = {
-				\"id\": localID,
-				\"x\":x,
-				\"y\":y,
-				\"type\":type,
-				\"orientation\":orientation	
-			}
+		if global.cells.empty():
+			pass
 		else:
 			global.cells.append({
 				\"id\": localID,
@@ -57,50 +50,29 @@ func createCell(x : int, y: int, type: String, orientation: String):
 
 #remove cell and remove from the dictionary
 func removeCell(x: int,y: int):
-	print(\"removing\")
 	var i: int = 0
-	var c = global.cells[i]
 	set_cell(x,y,-1)
 	var cellFoudID : int = -1
+	var machineNode
+	var cellIndex : int
+	var machineNodeIndex : int
 
 	#find machine id at coordinates (x,y)
 	for N in global.cells.size():
-		if global.cells[N-1].x == x && global.cells[N].y == y:
-			print(\"tenemos uno kau!\")
+		if global.cells[N].x == x && global.cells[N].y == y:
 			cellFoudID = global.cells[N].id
+			cellIndex = N
 			
 			#remove the node from the scene tree and the node list
-			for i in global.machines.size():
-				if global.machines[0].id == cellFoudID:
-					emit_signal(\"removeChild\",global.machines[i])
-					global.machines.remove(i)
-					print(\"removed from node list\")
-			global.cells.remove(N)
-
-
-
-		
-		
-#	var n = 0
-#	var m = global.machines[n]
-#	while not(m.id == c.id):
-#		n +=1
-#		m = global.machines[n]
-#
-##	get_tree().get_root().remove_child(m)
-#	emit_signal(\"removeChild\",m)
-	print(\"send\")
-	
-	#removes teh cell in (x,y) from the global list
-	global.cells.remove(i)
-	if global.cells.empty():
-		global.cells.append({
-			\"id\": null,
-			\"x\":null,
-			\"y\":null,
-			\"type\":null,
-			\"orientation\":null
-		})
+	for N in global.machines.size():
+		if global.machines[N].id == cellFoudID:
+			machineNode = global.machines[N]
+			machineNodeIndex = N
+			
+	if cellFoudID != -1:
+		emit_signal(\"removeChild\",machineNode)
+		global.machines.remove(machineNodeIndex)
+		global.cells.remove(cellIndex)
 
 
 
@@ -113,14 +85,17 @@ func _input(event):
 	
 	#I need to create tha table as expected and create a function to add and remove Cells from the table and then create an object to use on programing whose valuers are defined from tha table and a function to add it into the table.
 	var L_click_pressed = Input.is_action_pressed(\"ui_select\")
-	var there_is_no_cell_there = actualCellNum == -1
+	var thereIsNoCellThere = actualCellNum == -1
 #	var the_machine_is_selected = get_tree().get_root().get_node(\"Main\").Machine1_BTN
 	
-	if L_click_pressed: #&& there_is_no_cell_there: #&& the_machine_is_selected: #add tile selected 
-			createCell(loc.x, loc.y, global.cellSelected, \"south\") #(x,y,type, orientation)
-	elif Input.is_action_pressed(\"R_click\"):
-		if actualCellNum != -1:
+	if L_click_pressed: #&& the_machine_is_selected: #add tile selected 
+		if global.cellSelected == \"delete\":
 			removeCell(loc.x, loc.y)
+		elif thereIsNoCellThere:
+			createCell(loc.x, loc.y, global.cellSelected, \"south\") #(x,y,type, orientation)
+#	elif Input.is_action_pressed(\"R_click\"):
+#		if actualCellNum != -1:
+			
 
 
  

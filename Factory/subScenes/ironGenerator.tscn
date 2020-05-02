@@ -12,19 +12,46 @@ var type : String = \"ironGenerator\"
 var orientation: int = 2
 var loadedIngot = preload(\"res://subScenes/ironIngot.tscn\")
 var ingot
+var pathDone : Vector2
+
 
 
 
 #creates tha path for the created object to follow
 func setPath():
-	get_node(\"Path2D\").curve.add_point(global.tileMap.map_to_world(Vector2(0,0)) + Vector2(64,64))
-	get_node(\"Path2D\").curve.add_point(global.tileMap.map_to_world(Vector2(0,1))+ Vector2(64,64))
-	print(global.findCell(Vector2(0,1) + global.tileMap.world_to_map(self.position)))
 	
-#	if global.tileMap.get_cell(0,1) in global.conveyorbeltsDictionary:
-#		print(\"true\")
-#	else:
-#		print(\"false\")
+	addPointToPath(\"Path2D\", Vector2(0,0))
+	addPointToPath(\"Path2D\", Vector2(0,1))
+	continuePath()
+#	addPointToPath(\"Path2D\", Vector2(1,0))
+#	print(global.findCell(Vector2(0,1) + global.tileMap.world_to_map(self.position)))
+#	nextCellInPath = global.findCell(pathDone + global.tileMap.world_to_map(self.position))
+#
+#	if nextCellInPath != null:
+#		continuePath()
+#
+#		if global.conveyorbeltsList.has(nextCellInPath.type):
+#			print(\"theres a conveyor\")
+#			pointToAdd = global.getNextRelativePlaceForPath(nextCellInPath.type)
+#			print(pointToAdd)
+#			addPointToPath(\"Path2D\",pointToAdd)
+##			get_node(\"Path2D\").curve.add_point(pointToAdd)
+	
+	print(pathDone)
+
+func continuePath():
+	var nextCellInPath
+	var pointToAdd : Vector2
+	
+	nextCellInPath = global.findCell(pathDone + global.tileMap.world_to_map(self.position))
+	if nextCellInPath != null:
+		if global.conveyorbeltsList.has(nextCellInPath.type):
+			pointToAdd = global.getNextRelativePlaceForPath(nextCellInPath.type)
+			addPointToPath(\"Path2D\",pointToAdd)
+			continuePath()
+	else:
+		pass
+	
 	
 	
 	
@@ -33,6 +60,29 @@ func _ready():
 
 
 
+
+
+func addPointToPath(nodePathToAddTo: String,vectorToAdd: Vector2):
+	pathDone += vectorToAdd
+	print(pathDone)
+	get_node(nodePathToAddTo).curve.add_point(global.tileMap.map_to_world(pathDone) + Vector2(64,64))
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+# warning-ignore:unused_argument
+func _process(delta):
+	#calls every x frames and creates an ingot
+	if global.framesPassedSicnceStarted % 60 == 0:
+		print(\"ingot created\")
+		ingot = loadedIngot.instance()
+		get_node(\"Path2D/PathFollow2D\").add_child(ingot)
+		get_node(\"Path2D/PathFollow2D\").offset += ingotSpeed
+
+
+	
+
+#usesless funciton ready to delet theoreticly
 func ingot_direction(orientation_loc):
 	var Vect
 	match orientation_loc:
@@ -42,27 +92,6 @@ func ingot_direction(orientation_loc):
 		3: Vect = Vector2(-1,0)
 		
 	return Vect
-
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-# warning-ignore:unused_argument
-func _process(delta):
-	#calls every x frames and creates an ingot
-	if global.framesPassedSicnceStarted % 60 == 0:
-		ingot = loadedIngot.instance()
-		#get_tree().get_root().add_child(ingot)
-		get_node(\"Path2D/PathFollow2D\").add_child(ingot)
-#		ingot.position = self.position
-#		ingot.linear_velocity = ingotSpeed*ingot_direction(self.orientation)
-#		ingot.from_node_ID = self.id
-		
-		#ingot = loaded_ingot.instance()
-		#get_node(\"Path2D/PathFollow2D\").add_child(ingot)
-		get_node(\"Path2D/PathFollow2D\").offset += ingotSpeed
-
-
 
 
 
@@ -83,7 +112,7 @@ mode = 1
 mass = 65535.0
 gravity_scale = 0.0
 script = SubResource( 1 )
-ingotSpeed = 10
+ingotSpeed = 30
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

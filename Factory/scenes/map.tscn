@@ -24,7 +24,6 @@ func addMachineToMap(x: int, y: int, type: String, orientation: String, id : int
 	
 	global.machines.append(node)
 	get_node(\"Machines\").add_child(node)
-	print(self.get_node(\"Machines\").get_children())
 	
 
 
@@ -34,7 +33,6 @@ func _on_selecMenuButton_button_up():
 
 func _on_TileMap_removeChild(node):
 	get_node(\"Machines\").remove_child(node)
-	print(\"removed\")
 "
 
 [sub_resource type="TileSet" id=2]

@@ -2,12 +2,9 @@ extends Node
 
 const conveyorbeltsList =  ["rightConveyorBelt"]
 
-
 const saveWorldPath = "res://saves/saved_map.json"
 
 var time
-
-
 
 var map = load("res://subScenes/tileMap.tscn") as PackedScene
 
@@ -89,7 +86,6 @@ func _ready():
 	tileMap = map.instance()
 
 
-
 # warning-ignore:unused_argument
 func _process(delta):
 	framesPassedSicnceStarted += 1
@@ -128,3 +124,11 @@ func getMachineScenePath(machine: String) -> String:
 		"ironGenerator" : path = "res://subScenes/ironGenerator.tscn"
 		"rightConveyorBelt": path = "res://subScenes/rightConveyorBelt.tscn"
 	return path
+
+
+func getNextRelativePlaceForPath(foudCell: String) -> Vector2:
+	var vectorToReturn : Vector2
+	match foudCell:
+		"rightConveyorBelt" : vectorToReturn = Vector2(1,0)
+	print(vectorToReturn)
+	return vectorToReturn
