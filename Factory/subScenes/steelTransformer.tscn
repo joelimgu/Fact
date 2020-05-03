@@ -9,8 +9,11 @@ script/source = "extends RigidBody2D
 
 export(float) var ingotSpeed: float
 export(int) var generationSpeed : int
-export(int) var coalNeeded : int
-export(int) var ironNeeded : int
+export(int) var res1 : int
+export(int) var res2 : int
+export(int) var res3 : int
+export(int) var res4 : int
+
 var id : int
 const type : String = \"ironGenerator\"
 var orientation: String = \"south\"

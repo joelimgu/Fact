@@ -24,7 +24,7 @@ func createCell(x : int, y: int, type: String, orientation: String):
 		removeCell(x,y)
 	else:
 	#	create the tile
-		set_cell(x,y,1)
+		set_cell(x,y,getCellTypeID(type))
 		var localID = global.assingID()
 		
 		global.cells.append({

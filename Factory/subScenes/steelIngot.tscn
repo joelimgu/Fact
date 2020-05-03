@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://subScenes/ingotBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/textures/steelIngot.png" type="Texture" id=2]
 
 [node name="Area2D" groups=[
 "steelIngot",
@@ -8,3 +9,4 @@
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, 1.90735e-06 )
+texture = ExtResource( 2 )

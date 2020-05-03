@@ -41,7 +41,7 @@ func _on_coalGeneratorButton_button_up():
 
 
 func _on_steelTransformerButton_button_up():
-	global.cellSelected = \"steelTransformer\"
+	global.cellSelected = \"steelConverter\"
 	emit_signal(\"exitMachneSelection\")
 
 

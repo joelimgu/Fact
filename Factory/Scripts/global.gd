@@ -2,24 +2,22 @@ extends Node
 
 const conveyorbeltsList =  ["rightConveyorBelt"]
 
-const saveWorldPath = "res://saves/saved_map.json"
+const saveWorldPath : String = "res://saves/saved_map.json"
 
-var time
+var map : PackedScene = load("res://subScenes/tileMap.tscn") as PackedScene
 
-var map = load("res://subScenes/tileMap.tscn") as PackedScene
-
-var tileMap
+var tileMap: TileMap
 
 var cellSelected : String = "ironGenerator"
 
 #ist with all the nodes in the screen they are the actual nodes, not structured, bad id
-var machines =[] #shuld be replaceable by getting the Machine childs list
+var machines : Array =[] #shuld be replaceable by getting the Machine childs list
 
 #variable used to assign new id to new cells
-var maxAssignedID: int
+var maxAssignedID : int
 
 #actual dictionary with all the cell in the world info to store in json
-var cells
+var cells : Array
 #	[
 #		{	"id": int,
 #			"x":int,
@@ -41,7 +39,7 @@ var framesPassedSicnceStarted: int = 0
 #during the program I'll be using andothe array and every dictionary in
 #the array will be an instance of the machine class (conroled in machine 
 #controler.gd)
-const defaultData = {"maxAssignedID":0,"cellsList":[{
+const defaultData : Dictionary = {"maxAssignedID":0,"cellsList":[{
 	"id": null,
 	"x":null,
 	"y":null,
@@ -56,7 +54,7 @@ func loadGame():
 
 
 func loadSaveFile():
-	var file = File.new()
+	var file : File = File.new()
 	file.open(saveWorldPath, file.READ)
 		
 	if not file.file_exists(saveWorldPath):
@@ -67,7 +65,7 @@ func loadSaveFile():
 		file.open(saveWorldPath, file.READ)
 		
 	
-	var text = file.get_as_text()
+	var text : String = file.get_as_text()
 	print("The var text loading file is :\n" + text + "\n(line 76 global.dg)\n")
 	maxAssignedID = parse_json(text).maxAssignedID
 	cells = parse_json(text).cellsList
@@ -117,13 +115,13 @@ func readJSONFile(path: String):
 	return parse_json(text)
 
 
-func getScenePath(machine : String) -> String:
+func getScenePath(cell : String) -> String:
 	var path : String
-	match machine :
+	match cell :
 		"ironGenerator" : path = "res://subScenes/ironGenerator.tscn"
 		"rightConveyorBelt": path = "res://subScenes/rightConveyorBelt.tscn"
 		"coalGenerator": path = "res://subScenes/coalGenerator.tscn"
-		"steelTransformer": path = "res://subScenes/steelTransformer.tscn"
+		"steelConverter": path = "res://subScenes/steelConverter.tscn"
 		_ : path = "res://subScenes/generatorBase.tscn"
 	
 	return path
@@ -134,7 +132,8 @@ func getRessourcePath(machineType : String) -> String:
 	match machineType:
 		"generatorBase" : path = "res://subScenes/ingotBase.tscn"
 		"ironGenerator" : path = "res://subScenes/ironIngot.tscn"
-		"coalGenerator" : path = "res://subScenes/coalIngot.tscn"		
+		"coalGenerator" : path = "res://subScenes/coalIngot.tscn"
+		"steelConverter": path = "res://subScenes/steelIngot.tscn"
 		_ : path = "res://subScenes/ingotBase.tscn"
 	
 	return path
