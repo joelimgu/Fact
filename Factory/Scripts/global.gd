@@ -117,16 +117,29 @@ func readJSONFile(path: String):
 	return parse_json(text)
 
 
-func getScenePath(machine: String) -> String:
+func getScenePath(machine : String) -> String:
 	var path : String
 	match machine :
 		"ironGenerator" : path = "res://subScenes/ironGenerator.tscn"
 		"rightConveyorBelt": path = "res://subScenes/rightConveyorBelt.tscn"
 		"coalGenerator": path = "res://subScenes/coalGenerator.tscn"
 		"steelTransformer": path = "res://subScenes/steelTransformer.tscn"
+		_ : path = "res://subScenes/generatorBase.tscn"
+	
 	return path
 
 
+func getRessourcePath(machineType : String) -> String:
+	var path: String
+	match machineType:
+		"generatorBase" : path = "res://subScenes/ingotBase.tscn"
+		"ironGenerator" : path = "res://subScenes/ironIngot.tscn"
+		"coalGenerator" : path = "res://subScenes/coalIngot.tscn"		
+		_ : path = "res://subScenes/ingotBase.tscn"
+	
+	return path
+	
+	
 func getNextRelativePlaceForPath(foudCell: String) -> Vector2:
 	var vectorToReturn : Vector2
 	match foudCell:

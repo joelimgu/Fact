@@ -8,8 +8,8 @@ script/source = "extends \"res://scripts/generatorBase.gd\"
 
 
 func _init():
-	loadedResource = preload(\"res://subScenes/coalIngot.tscn\")
-	type = \"coalGenerator\"
+	self.type = \"coalGenerator\"
+	._init()
 "
 
 [node name="RigidBody2D" instance=ExtResource( 1 )]

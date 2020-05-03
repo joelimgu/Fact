@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://subScenes/generatorBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/ironGenerator.png" type="Texture" id=2]
@@ -7,14 +7,23 @@
 script/source = "extends \"res://scripts/generatorBase.gd\"
 
 func _init():
-	loadedResource = preload(\"res://subScenes/ironIngot.tscn\")
-	type = \"ironGenerator\"
+	self.type = \"ironGenerator\"
+	._init()
 "
+
+[sub_resource type="Curve2D" id=2]
+resource_local_to_scene = true
+_data = {
+"points": PoolVector2Array(  )
+}
 
 [node name="RigidBody2D" instance=ExtResource( 1 )]
 script = SubResource( 1 )
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
+
+[node name="Path2D" parent="." index="2"]
+curve = SubResource( 2 )
 
 [editable path="ArrowSprites"]

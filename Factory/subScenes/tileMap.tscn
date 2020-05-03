@@ -27,23 +27,15 @@ func createCell(x : int, y: int, type: String, orientation: String):
 		set_cell(x,y,1)
 		var localID = global.assingID()
 		
-	#	if the data is blank, write it to the first if not, 
-	#	append a new one
-	#	i must change this, it was only for testing purposes, i have to edit the reference data for the dictionary to be balnk and only append here
-		if global.cells.empty():
-			pass
-		else:
-			global.cells.append({
+		global.cells.append({
 				\"id\": localID,
 				\"x\":x,
 				\"y\":y,
 				\"type\":type,
 				\"orientation\":orientation	
-			})
+		})
 	
 		get_parent().addMachineToMap(x, y, type , orientation, localID)
-	
-
 
 
 

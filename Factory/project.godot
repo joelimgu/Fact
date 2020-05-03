@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Cell",
+"language": "GDScript",
+"path": "res://scripts/cellClass.gd"
+}, {
+"base": "Cell",
+"class": "Machine",
+"language": "GDScript",
+"path": "res://scripts/machineClass.gd"
+} ]
 _global_script_class_icons={
-
+"Cell": "",
+"Machine": ""
 }
 
 [application]

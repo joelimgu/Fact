@@ -6,6 +6,8 @@ script/source = "extends PathFollow2D
 var speed: float
 var lastOffset: float
 
+
+# warning-ignore:unused_argument
 func _process(delta):
 	lastOffset = self.offset
 	self.offset += speed
