@@ -42,7 +42,7 @@ func continuePath():
 	
 	nextCellInPath = global.findCell(self.pathDone + global.tileMap.world_to_map(self.position))
 	if nextCellInPath != null:
-		if global.conveyorbeltsList.has(nextCellInPath.type):
+		if global.conveyorbeltsList.has(nextCellInPath.type) && get_node("Path2D").curve.get_point_count() < 1000:
 			pointToAdd = global.getNextRelativePlaceForPath(nextCellInPath.type)
 			addPointToPath("Path2D",pointToAdd)
 			continuePath()
@@ -56,8 +56,8 @@ func _ready():
 
 func addPointToPath(nodePathToAddTo: String,vectorToAdd: Vector2):
 	self.pathDone += vectorToAdd
-	get_node(nodePathToAddTo).curve.add_point(global.tileMap.map_to_world(self.pathDone) + Vector2(64,64))	
-
+	get_node(nodePathToAddTo).curve.add_point(global.tileMap.map_to_world(self.pathDone) + Vector2(64,64))
+	
 #usesless funciton ready to delet theoreticly
 func ingot_direction(orientation : String):
 	var Vect
