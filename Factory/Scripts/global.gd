@@ -1,6 +1,6 @@
 extends Node
 
-const conveyorbeltsList =  ["rightConveyorBelt"]
+const conveyorbeltsList =  ["eastConveyorBelt", "southConveyorBelt","westConveyorBelt","northConveyorBelt"]
 
 const saveWorldPath : String = "res://saves/saved_map.json"
 
@@ -119,7 +119,7 @@ func getScenePath(cell : String) -> String:
 	var path : String
 	match cell :
 		"ironGenerator" : path = "res://subScenes/ironGenerator.tscn"
-		"rightConveyorBelt": path = "res://subScenes/rightConveyorBelt.tscn"
+		"eastConveyorBelt": path = "res://subScenes/ConveyorBelt.tscn"
 		"coalGenerator": path = "res://subScenes/coalGenerator.tscn"
 		"steelConverter": path = "res://subScenes/steelConverter.tscn"
 		_ : path = "res://subScenes/generatorBase.tscn"
@@ -142,5 +142,9 @@ func getRessourcePath(machineType : String) -> String:
 func getNextRelativePlaceForPath(foudCell: String) -> Vector2:
 	var vectorToReturn : Vector2
 	match foudCell:
-		"rightConveyorBelt" : vectorToReturn = Vector2(1,0)
+		"eastConveyorBelt" : vectorToReturn = Vector2(1,0)
+		"southConveyorBelt": vectorToReturn = Vector2(0,1)
+		"westConveyorBelt": vectorToReturn = Vector2(-1,0)
+		"northConveyorBelt": vectorToReturn = Vector2(0,-1)
+		_ :vectorToReturn = Vector2(1,0)
 	return vectorToReturn

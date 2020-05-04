@@ -36,7 +36,7 @@ func createCell(x : int, y: int, type: String, orientation: String):
 		})
 	
 		get_parent().addMachineToMap(x, y, type , orientation, localID)
-
+		print(global.cells)
 
 
 
@@ -66,27 +66,29 @@ func removeCell(x: int,y: int):
 		global.cells.remove(cellIndex)
 
 
-func updateOrientation(newOrientation:String, pos : Vector2):
-	get_tree().call_group(\"orientableTile\", \"orientate\", \"north\", pos)
+func updateOrientation(rotation:String, pos : Vector2):
+	get_tree().call_group(\"orientableTile\", \"orientate\", rotation, pos)
 
 
-# warning-ignore:unused_argument
 func _input(event):
+	var orientateDone : bool
 	mouse = get_viewport().get_mouse_position()
 	loc = world_to_map(mouse)
 	actualCellNum = get_cell(loc.x, loc.y)
-	
+	if Input.is_action_just_pressed(\"ui_select\"):
+		pass
 	
 	#I need to create tha table as expected and create a function to add and remove Cells from the table and then create an object to use on programing whose valuers are defined from tha table and a function to add it into the table.
-	var L_click_pressed = Input.is_action_pressed(\"ui_select\")
+	var L_click_pressed = Input.is_action_just_pressed(\"ui_select\")
 	var thereIsNoCellThere = actualCellNum == -1
 #	var the_machine_is_selected = get_tree().get_root().get_node(\"Main\").Machine1_BTN
 	
 	if L_click_pressed: #&& the_machine_is_selected: #add tile selected 
 		if global.cellSelected == \"delete\":
 			removeCell(loc.x, loc.y)
-		elif global.cellSelected == \"leftRotate\":
-			updateOrientation(\"leftRotate\", loc)
+		elif global.cellSelected == \"clockwise\":
+			updateOrientation(\"clockwise\", loc)
+			orientateDone = true
 		elif thereIsNoCellThere:
 			createCell(loc.x, loc.y, global.cellSelected, \"south\") #(x,y,type, orientation)
 		get_tree().call_group(\"generators\", \"updatePath\")

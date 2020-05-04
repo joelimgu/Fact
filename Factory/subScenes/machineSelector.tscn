@@ -25,7 +25,7 @@ func _on_ironGeneratorButton_button_up():
 
 
 func _on_rigthConveyorBelt_button_up():
-	global.cellSelected = \"rightConveyorBelt\"
+	global.cellSelected = \"eastConveyorBelt\"
 	emit_signal(\"exitMachneSelection\")
 
 
@@ -46,7 +46,7 @@ func _on_steelTransformerButton_button_up():
 
 
 func _on_rotateButton_button_up():
-	global.cellSelected = \"leftRotate\"
+	global.cellSelected = \"clockwise\"
 	emit_signal(\"exitMachneSelection\")
 "
 

@@ -32,7 +32,7 @@ func updatePath():
 #creates tha path for the created object to follow
 func setPath():
 	addPointToPath("Path2D", Vector2(0,0))
-	addPointToPath("Path2D", Vector2(0,1))
+	addPointToPath("Path2D", ingot_direction(self.orientation))
 	continuePath()
 	
 
@@ -59,13 +59,13 @@ func addPointToPath(nodePathToAddTo: String,vectorToAdd: Vector2):
 	get_node(nodePathToAddTo).curve.add_point(global.tileMap.map_to_world(self.pathDone) + Vector2(64,64))	
 
 #usesless funciton ready to delet theoreticly
-func ingot_direction(orientation_loc):
+func ingot_direction(orientation : String):
 	var Vect
-	match orientation_loc:
-		0: Vect = Vector2(0,-1)
-		1: Vect = Vector2(1,0)
-		2: Vect = Vector2(0,1)
-		3: Vect = Vector2(-1,0)
+	match orientation:
+		"north": Vect = Vector2(0,-1)
+		"east" : Vect = Vector2(1,0)
+		"south": Vect = Vector2(0,1)
+		"west" : Vect = Vector2(-1,0)
 		
 	return Vect
 
@@ -79,8 +79,8 @@ func generateResource():
 	get_node("Path2D").add_child(resourceFollowPath2D)
 	
 
-func orientate(newOrientation: String, pos: Vector2):
+func orientate(rotation: String, pos: Vector2):
+	.orientate(rotation, pos)
 	if pos == global.tileMap.world_to_map(self.position):
-		self.orientation = newOrientation
 		get_tree().call_group("arrows", "updateOrientation")
-
+		

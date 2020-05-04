@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/textures/conveyorBelt.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Cell
+
+var initialPosition : Vector2
+
+func _ready():
+	initialPosition = self.position
+	self.orientation = \"east\"
+
+func orientate(rotation: String, pos: Vector2):
+	.orientate(rotation, pos)
+	if pos == global.tileMap.world_to_map(self.position):
+		print(\"orientated\")
+		match self.orientation:
+			\"north\":
+				self.get_node(\"Sprite\").set_rotation_degrees(270)
+				self.get_node(\"Sprite\").position = Vector2(0,128)
+				self.type = \"northConveyorBelt\"
+			\"east\" :
+				self.get_node(\"Sprite\").set_rotation_degrees(0)
+				self.get_node(\"Sprite\").position = Vector2(0,0)
+				self.type = \"eastConveyorBelt\"
+			\"south\":
+				self.get_node(\"Sprite\").set_rotation_degrees(90)
+				self.get_node(\"Sprite\").position = Vector2(128,0)
+				self.type = \"southConveyorBelt\"
+			\"west\" :
+				self.get_node(\"Sprite\").set_rotation_degrees(180)
+				self.get_node(\"Sprite\").position = Vector2(128,128)
+				self.type = \"westConveyorBelt\"
+		
+		for N in global.cells.size():
+			if global.cells[N].id == self.id:
+				global.cells[N].type = self.type
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 64, 64 )
+
+[node name="rightConveyorBelt" type="RigidBody2D" groups=[
+"orientableTile",
+]]
+z_index = 1
+mode = 1
+script = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 64, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 64, 64 )
+shape = SubResource( 2 )

@@ -17,7 +17,6 @@ func updateOrientation():
 	get_node(\"downArrow\").set_visible(false)
 	get_node(\"leftArrow\").set_visible(false)
 	get_node(\"rightArrow\").set_visible(false)
-	print(\"oriented!\")
 
 	match orientation:
 		\"north\": get_node(\"upArrow\").set_visible(true)
