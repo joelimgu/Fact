@@ -2,7 +2,7 @@ extends Node
 
 const conveyorbeltsList =  ["eastConveyorBelt", "southConveyorBelt","westConveyorBelt","northConveyorBelt"]
 
-const saveWorldPath : String = "res://saves/saved_map.json"
+const saveWorldPath : String = "saved_map.json"
 
 var map : PackedScene = load("res://subScenes/tileMap.tscn") as PackedScene
 
@@ -15,6 +15,8 @@ var machines : Array =[] #shuld be replaceable by getting the Machine childs lis
 
 #variable used to assign new id to new cells
 var maxAssignedID : int
+
+var playerRelativePos : Vector2 = Vector2(0,0)
 
 #actual dictionary with all the cell in the world info to store in json
 var cells : Array

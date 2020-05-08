@@ -72,7 +72,7 @@ func updateOrientation(rotation:String, pos : Vector2):
 
 func _input(event):
 	var orientateDone : bool
-	mouse = get_viewport().get_mouse_position()
+	mouse = get_viewport().get_mouse_position() + global.playerRelativePos
 	loc = world_to_map(mouse)
 	actualCellNum = get_cell(loc.x, loc.y)
 	if Input.is_action_just_pressed(\"ui_select\"):

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/inspiració.wav-d8a012552b4f2b439daa625da882e28d.sample"
+
+[deps]
+
+source_file="res://assets/sounds/inspiració.wav"
+dest_files=[ "res://.import/inspiració.wav-d8a012552b4f2b439daa625da882e28d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

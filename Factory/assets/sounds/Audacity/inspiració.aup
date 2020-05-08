@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="inspiració_data" version="1.3.0" audacityversion="2.3.2" sel0="0.0000000000" sel1="0.0000000000" vpos="0" h="0.0000000000" zoom="1215.1912811388" rate="48000.0" snapto="off" selectionformat="hh:mm:ss + milliseconds" frequencyformat="Hz" bandwidthformat="octaves">
+	<tags>
+		<tag name="Software" value="Lavf57.56.101"/>
+		<tag name="YEAR" value="20140713"/>
+		<tag name="major_brand" value="isom"/>
+		<tag name="minor_version" value="512"/>
+		<tag name="ARTIST" value="n Beats"/>
+		<tag name="compatible_brands" value="isomiso2mp41"/>
+		<tag name="purl" value="https://www.youtube.com/watch?v=B-i4VRyNIKo"/>
+		<tag name="comment" value="Airplane Take Off Sound In Best Quality  Sound effects (or audio effects) are artificially created or enhanced sounds, or sound processes used to emphasize artistic or other content of films, television shows, live performance, animation, video games, music, or other media."/>
+		<tag name="description" value="Airplane Take Off Sound In Best Quality  Sound effects (or audio effects) are artificially created or enhanced sounds, or sound processes used to emphasize artistic or other content of films, television shows, live performance, animation, video games, music, or other media."/>
+		<tag name="TITLE" value="Airplane Take Off Sound Effect In High Quality"/>
+	</tags>
+	<wavetrack name="airplane-take-off-sound-effect-in-high-quality" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.122018" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="6015">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808a3d.au" len="6015" min="-0.0475" max="0.04558" rms="0.008452"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="airplane-take-off-sound-effect-in-high-quality" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.122018" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="6015">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808967.au" len="6015" min="-0.028353" max="0.036387" rms="0.005249"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>

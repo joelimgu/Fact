@@ -5,6 +5,8 @@ export(int) var ironNeeded : int
 
 
 func _on_generation_timeout():
+	get_node("Sprite/AnimationPlayer").play("ingotCreation")
+	print("played")
 	generateResource()
 
 

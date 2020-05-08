@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://subScenes/tileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/conveyorBelt.png" type="Texture" id=3]
 [ext_resource path="res://assets/textures/ironGenerator.png" type="Texture" id=4]
-[ext_resource path="res://assets/textures/GUI/selectTile.png" type="Texture" id=5]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -69,16 +68,5 @@ script = SubResource( 1 )
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 tile_set = SubResource( 2 )
 
-[node name="selecMenuButton" type="TextureButton" parent="."]
-margin_left = 940.0
-margin_top = 20.0
-margin_right = 1004.0
-margin_bottom = 84.0
-texture_normal = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Machines" type="Node2D" parent="."]
 [connection signal="removeChild" from="TileMap" to="." method="_on_TileMap_removeChild"]
-[connection signal="button_up" from="selecMenuButton" to="." method="_on_selecMenuButton_button_up"]
